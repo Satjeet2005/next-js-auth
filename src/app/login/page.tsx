@@ -32,7 +32,7 @@ const Login = () => {
       setIsLoading(true);
       const response = await axios.post("/api/users/login", user);
       console.log(response);
-      router.push("/")
+      router.push("/profile")
       toast.success("Login sucessful");
     } catch (e: any) {
       console.log("Login failed", e);
