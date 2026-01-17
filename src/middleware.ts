@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { extractJWT } from "./helpers/extractJWT";
 
-export async function proxy(request: NextRequest) {
+export async function middleware(request: NextRequest) {
   const path = request.nextUrl.pathname;
   const isPathPublic = path === "/login" || path === "/signup";
   const token = request.cookies.get("token")?.value || "";
